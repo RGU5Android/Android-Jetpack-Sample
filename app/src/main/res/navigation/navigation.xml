@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	app:startDestination="@id/navigationFragment">
+
+	<fragment
+		android:id="@+id/githubUserFragment"
+		android:name="rgu5android.jetpack.ui.user.GithubUserFragment"
+		android:label="Search User"
+		tools:layout="@layout/github_user_fragment">
+
+		<action
+			android:id="@+id/action_githubUserFragment_to_followFragment"
+			app:destination="@id/followFragment"
+			app:enterAnim="@anim/slide_in_right"
+			app:exitAnim="@anim/slide_out_left"
+			app:popEnterAnim="@anim/slide_in_left"
+			app:popExitAnim="@anim/slide_out_right" />
+	</fragment>
+
+	<fragment
+		android:id="@+id/followFragment"
+		android:name="rgu5android.jetpack.ui.follow.FollowFragment"
+		android:label="FollowFragment">
+		<argument
+			android:name="username"
+			app:argType="string" />
+		<argument
+			android:name="type"
+			app:argType="integer" />
+	</fragment>
+
+	<fragment
+		android:id="@+id/navigationFragment"
+		android:name="rgu5android.jetpack.ui.NavigationFragment"
+		android:label="Navigation"
+		tools:layout="@layout/fragment_navigation">
+
+		<action
+			android:id="@+id/action_navigationFragment_to_githubUserFragment"
+			app:destination="@id/githubUserFragment"
+			app:enterAnim="@anim/slide_in_right"
+			app:exitAnim="@anim/slide_out_left"
+			app:popEnterAnim="@anim/slide_in_left"
+			app:popExitAnim="@anim/slide_out_right" />
+
+		<action
+			android:id="@+id/action_navigationFragment_to_repositoryFragment"
+			app:destination="@id/repositoryFragment"
+			app:enterAnim="@anim/slide_in_right"
+			app:exitAnim="@anim/slide_out_left"
+			app:popEnterAnim="@anim/slide_in_left"
+			app:popExitAnim="@anim/slide_out_right" />
+
+	</fragment>
+
+	<fragment
+		android:id="@+id/repositoryFragment"
+		android:name="rgu5android.jetpack.ui.repository.RepositoryFragment"
+		android:label="Search With Cache"
+		tools:layout="@layout/repository_fragment">
+
+		<argument
+			android:name="networkOnly"
+			android:defaultValue="true"
+			app:argType="boolean" />
+	</fragment>
+
+</navigation>

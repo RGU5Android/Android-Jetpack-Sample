@@ -1,0 +1,11 @@
+<resources>
+	<string name="app_name">JetPack</string>
+	<string name="following">Following</string>
+	<string name="follower">Follower</string>
+	<string name="repositories">Repositories</string>
+	<string name="search_github_user">Search Github User</string>
+	<string name="search_repository">Search Repository With Room</string>
+	<string name="search_user">Search User</string>
+	<string name="pagination_with_room">Pagination With Room</string>
+	<string name="pagination_without_room">Pagination Without Room</string>
+</resources>

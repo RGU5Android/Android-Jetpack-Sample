@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+
+	<data>
+
+		<variable
+			name="vm"
+			type="rgu5android.jetpack.vo.Repository" />
+	</data>
+
+	<com.google.android.material.card.MaterialCardView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="4dp"
+		app:cardCornerRadius="16dp"
+		app:strokeColor="@color/colorAccent">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:padding="8dp">
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/textView"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_marginTop="8dp"
+				android:layout_marginEnd="8dp"
+				android:layout_marginBottom="8dp"
+				android:singleLine="true"
+				android:text="@{vm.name}"
+				android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+				android:textColor="@color/colorAccent"
+				app:layout_constraintBottom_toTopOf="@+id/textView2"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/imageView3"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintVertical_chainStyle="packed" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/textView2"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_marginTop="8dp"
+				android:layout_marginEnd="8dp"
+				android:singleLine="true"
+				android:text="@{vm.description}"
+				android:textAppearance="@style/TextAppearance.AppCompat.Small"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/imageView3"
+				app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+			<com.google.android.material.chip.Chip
+				android:id="@+id/chip"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:layout_marginEnd="16dp"
+				android:layout_marginBottom="8dp"
+				android:fontFamily="@font/product_sans"
+				android:text="@{`Stars: ` +String.valueOf(vm.forks)}"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toStartOf="@+id/chip2"
+				app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+			<com.google.android.material.chip.Chip
+				android:id="@+id/chip2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:layout_marginEnd="16dp"
+				android:layout_marginBottom="8dp"
+				android:fontFamily="@font/product_sans"
+				android:text="@{`Forks: ` +String.valueOf(vm.forks)}"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+			<androidx.appcompat.widget.AppCompatImageView
+				android:id="@+id/imageView3"
+				android:layout_width="100dp"
+				android:layout_height="100dp"
+				android:layout_marginStart="8dp"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:setImageUrl="@{vm.owner.avatarUrl}"
+				app:srcCompat="@drawable/ic_person" />
+
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+	</com.google.android.material.card.MaterialCardView>
+</layout>

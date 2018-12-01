@@ -1,3 +1,16 @@
+.gradle
+.idea
+build
+# gradle
+# gradle.properties
+local.properties
+*.iml
+.DS_Store
+app/release
+gradlew.bat
+app/staging
+app/production
+
 # Built application files
 *.apk
 *.ap_
