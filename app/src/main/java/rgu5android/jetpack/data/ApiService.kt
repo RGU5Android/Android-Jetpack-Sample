@@ -14,8 +14,8 @@ import rgu5android.jetpack.vo.GithubUser
 interface ApiService {
 	companion object {
 		const val baseUrl: String = "https://api.github.com/"
-		const val clientId: String = "69c8b21e8eb038ff111a"
-		const val clientSecret: String = "1fd36a0a5a0dfdc58f835092da358ab9efceb079"
+		const val clientId: String = "YOUR_CLIENT_ID"
+		const val clientSecret: String = "YOUR_CLIENT_SECRET"
 	}
 
 	@GET("users/{userName}")
